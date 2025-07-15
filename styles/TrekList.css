@@ -1,0 +1,170 @@
+/* Container */
+.trek-list-container {
+  max-width: 64rem; /* 4xl */
+  margin: 0 auto;
+  padding: 1.5rem 1rem; /* py-6 px-4 */
+}
+
+/* Header flex */
+.trek-list-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .trek-list-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Title */
+.trek-list-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .trek-list-title {
+    margin-bottom: 0;
+  }
+}
+
+/* Add button */
+.trek-add-button {
+  background-color: #22c55e; /* green-500 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.trek-add-button:hover {
+  background-color: #16a34a; /* green-600 */
+}
+
+/* Message for no treks */
+.trek-no-treks {
+  color: #6b7280; /* gray-500 */
+}
+
+/* Grid container for treks */
+.trek-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Each trek card */
+.trek-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.trek-card:hover {
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.15);
+}
+
+@media (min-width: 640px) {
+  .trek-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Text container inside card */
+.trek-info {
+  max-width: 100%;
+}
+
+/* Trek name */
+.trek-name {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600;
+  color: #1f2937; /* gray-800 */
+  margin: 0;
+}
+
+/* Location */
+.trek-location {
+  color: #6b7280; /* gray-500 */
+  margin: 0.25rem 0 0 0;
+}
+
+/* Description */
+.trek-description {
+  color: #4b5563; /* gray-600 */
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Difficulty and distance */
+.trek-meta {
+  color: #9ca3af; /* gray-400 */
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Buttons container */
+.trek-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .trek-actions {
+    margin-top: 0;
+  }
+}
+
+/* Edit button */
+.trek-edit-button {
+  background-color: #3b82f6; /* blue-500 */
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.trek-edit-button:hover {
+  background-color: #2563eb; /* blue-600 */
+}
+
+/* Delete button */
+.trek-delete-button {
+  background-color: #ef4444; /* red-500 */
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.trek-delete-button:hover {
+  background-color: #dc2626; /* red-600 */
+}

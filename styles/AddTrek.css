@@ -1,0 +1,43 @@
+.add-trek-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffffcc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.add-trek-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-trek-form input,
+.add-trek-form textarea,
+.add-trek-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-trek-form button {
+  padding: 10px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-trek-form button:hover {
+  background-color: #1b5e20;
+}
+
+.image-preview {
+  margin-top: 10px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}

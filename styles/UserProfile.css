@@ -1,0 +1,348 @@
+/* UserProfile.css */
+
+.profile-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+}
+
+.profile-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #222;
+}
+
+.profile-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background: #bbb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.profile-fields {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-fields label {
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #444;
+}
+
+.profile-fields input,
+.profile-fields textarea {
+  margin-top: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.profile-fields input:focus,
+.profile-fields textarea:focus {
+  border-color: #4a90e2;
+}
+
+.profile-fields button {
+  margin-top: 1rem;
+  align-self: flex-start;
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-fields button:disabled {
+  background-color: #9bbcfb;
+  cursor: not-allowed;
+}
+
+.profile-fields button:hover:not(:disabled) {
+  background-color: #357ab8;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-tabs button {
+  background: transparent;
+  border: 2px solid #4a90e2;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #4a90e2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-tabs button.active,
+.profile-tabs button:hover {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+/* Posts container */
+.profile-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.profile-post-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.07);
+  width: 280px;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.profile-post-card:hover {
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.15);
+}
+
+.profile-post-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.profile-post-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Save / Favorite buttons on posts */
+.post-buttons {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-start;
+}
+
+.post-buttons button {
+  background-color: #eee;
+  border: 1.5px solid #ccc;
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.post-buttons button:hover {
+  background-color: #4a90e2;
+  border-color: #357ab8;
+  color: white;
+}
+
+/* Modal styling */
+
+.modal-photos {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.modal-photo-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.modal-photo-thumb:hover {
+  border-color: #4a90e2;
+}
+
+.modal-buttons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.modal-buttons .btn-edit,
+.modal-buttons .btn-delete {
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons .btn-edit {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.modal-buttons .btn-edit:hover {
+  background-color: #357ab8;
+}
+
+.modal-buttons .btn-delete {
+  background-color: #e04e4e;
+  color: white;
+}
+
+.modal-buttons .btn-delete:hover {
+  background-color: #b33a3a;
+}
+
+/* Edit post form */
+.edit-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-post-form label {
+  font-weight: 600;
+  color: #444;
+}
+
+.edit-post-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.edit-post-form input[type="date"] {
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+}
+
+.edit-post-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.edit-post-buttons .btn-cancel,
+.edit-post-buttons .btn-save {
+  padding: 0.5rem 1.4rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.edit-post-buttons .btn-cancel {
+  background-color: #ccc;
+  color: #333;
+}
+
+.edit-post-buttons .btn-cancel:hover {
+  background-color: #999;
+}
+
+.edit-post-buttons .btn-save {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.edit-post-buttons .btn-save:hover:not(:disabled) {
+  background-color: #357ab8;
+}
+
+.edit-post-buttons .btn-save:disabled {
+  background-color: #9bbcfb;
+  cursor: not-allowed;
+}
+
+/* Photo preview modal */
+.photo-modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.photo-modal-image {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* Error message */
+.error-message {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  background: #fdd;
+  color: #900;
+  font-weight: 600;
+  border: 1.5px solid #900;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+}

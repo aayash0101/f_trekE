@@ -1,0 +1,221 @@
+/* Ensure body & html take full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 🌄 Treks page background & layout */
+.treks-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #2c3e50;
+  background:
+    linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+    url('https://images.unsplash.com/photo-1508264165352-258db2ebd47b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') 
+    center/cover no-repeat fixed;
+}
+
+.dark-mode {
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1508264165352-258db2ebd47b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
+    center/cover no-repeat fixed;
+  color: #f1f1f1;
+}
+
+/* 🌟 Header */
+.treks-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.treks-title {
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.treks-subtitle {
+  font-size: 1.1rem;
+  color: #6b7b8c;
+}
+
+.dark-mode .treks-subtitle {
+  color: #aaa;
+}
+
+.dark-mode-toggle {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background: #2980b9;
+}
+
+/* 🌿 Filters: full-width, search bar longer */
+.treks-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.treks-filters input,
+.treks-filters select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cdd6df;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  transition: border 0.2s, background 0.3s;
+}
+
+/* Make search bar wider */
+.treks-filter__search {
+  flex: 2 1 300px; /* grow more, min width 300px */
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.treks-filters select {
+  flex: 1 1 120px; /* dropdowns flexible, smaller */
+  min-width: 120px;
+}
+
+.treks-filters input:focus,
+.treks-filters select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.dark-mode .treks-filters input,
+.dark-mode .treks-filters select {
+  background: rgba(40, 40, 40, 0.8);
+  color: #f1f1f1;
+  border-color: #444;
+}
+
+/* 🌱 Count */
+.treks-count {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* 🏞️ Trek grid & cards */
+.treks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card & animations */
+.trek-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.trek-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.trek-card__difficulty {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  padding: 0.4rem 0.7rem;
+  color: #fff;
+  align-self: flex-start;
+  margin: 0.6rem;
+  border-radius: 12px;
+}
+
+.difficulty-easy { background: #2ecc71; }
+.difficulty-moderate { background: #f39c12; }
+.difficulty-hard { background: #e74c3c; }
+.difficulty-default { background: #7f8c8d; }
+
+.trek-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.trek-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+}
+
+.dark-mode .trek-card__title {
+  color: #f1f1f1;
+}
+
+.trek-card__location {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.trek-card__description {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-bottom: 0.5rem;
+}
+
+.dark-mode .trek-card__description,
+.dark-mode .trek-card__location {
+  color: #aaa;
+}
+
+.trek-card__meta {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dark-mode .trek-card__meta {
+  color: #bbb;
+}
+
+.trek-card__view-link {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.trek-card__view-link:hover {
+  text-decoration: underline;
+}

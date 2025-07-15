@@ -1,0 +1,45 @@
+.user-list-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-list-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f0f4f8;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9fbfc;
+}
+
+.user-table button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-table button:hover {
+  background-color: #b91c1c;
+}

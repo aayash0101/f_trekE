@@ -1,0 +1,284 @@
+/* Container */
+.journal-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Header */
+.journal-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Add Entry Button */
+.add-entry-btn {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+/* Form */
+.journal-form {
+  background: white;
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  margin-bottom: 2rem;
+}
+
+.journal-form input[type="date"],
+.journal-form textarea,
+.journal-form input[type="file"] {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  border: 1.8px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.journal-form input[type="date"]:focus,
+.journal-form textarea:focus,
+.journal-form input[type="file"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 5px #2563ebaa;
+}
+
+/* Photo preview */
+.photo-preview-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.photo-preview-container img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.photo-preview-container img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Timeline entries */
+.journal-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.journal-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 1.3rem 1.8rem;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.journal-card:hover {
+  background-color: #f3f4f6;
+}
+
+.journal-card-date {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.journal-card-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .journal-container {
+    padding: 1rem 1.2rem;
+  }
+  .journal-form {
+    padding: 1.2rem 1.5rem;
+  }
+  .photo-preview-container img {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.journal-container.elegant {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(46, 90, 134, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.journals-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2e5a86;
+  margin-bottom: 2rem;
+}
+
+.journal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.journal-form label {
+  font-weight: 600;
+  color: #2e5a86;
+  margin-bottom: 0.4rem;
+  display: block;
+  font-size: 1rem;
+}
+
+.journal-form input[type="date"],
+.journal-form textarea,
+.journal-form input[type="file"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.8px solid #cfd8e3;
+  transition: border-color 0.25s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.journal-form input[type="date"]:focus,
+.journal-form textarea:focus,
+.journal-form input[type="file"]:focus {
+  outline: none;
+  border-color: #2e5a86;
+  box-shadow: 0 0 6px rgba(46, 90, 134, 0.25);
+}
+
+.journal-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+  border-radius: 12px;
+}
+
+.photo-preview-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.photo-preview-container img {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(46, 90, 134, 0.15);
+  border: 1.5px solid #b0c4de;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.photo-preview-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(46, 90, 134, 0.3);
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 0.65rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary {
+  background-color: #2e5a86;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(46, 90, 134, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #24456a;
+  box-shadow: 0 6px 16px rgba(36, 69, 106, 0.6);
+}
+
+.btn-secondary {
+  background-color: #d0d7e3;
+  color: #2e5a86;
+  box-shadow: 0 2px 8px rgba(46, 90, 134, 0.15);
+}
+
+.btn-secondary:hover {
+  background-color: #b0b9ca;
+  box-shadow: 0 4px 12px rgba(46, 90, 134, 0.25);
+}
