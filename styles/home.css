@@ -76,6 +76,19 @@
   max-width: 280px;
   text-align: center;
 }
+.final-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+.signup-button {
+  padding: 12px 24px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
 .admin-btn {
   margin-top: 10px;
   display: inline-block;

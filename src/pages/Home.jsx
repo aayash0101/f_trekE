@@ -18,9 +18,6 @@ const Home = () => {
           <p className="hero-description">
             Whether you're a seasoned mountaineer or a casual explorer, TrekEnhance helps you discover personalized trekking experiences across Nepal.
           </p>
-          <Link to="/trekker" className="hero-button">
-            Explore Treks
-          </Link>
         </section>
 
         {/* Features Section */}
@@ -48,7 +45,7 @@ const Home = () => {
           <section className="cta-section">
 
   {/* Admin dashboard link */}
-  <div style={{ marginTop: "20px" }}>
+  <div style={{ marginTop: "40px" }}>
     <p style={{ fontSize: "14px", color: "#555" }}>Are you an admin?</p>
     <Link to="/admindashboard" className="btn admin-btn">
       Go to Admin Dashboard

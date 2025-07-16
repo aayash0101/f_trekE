@@ -26,11 +26,13 @@ import TrekDetailPage from "./pages/TrekDetailPage";
 import TrekJournalPage from "./pages/Journal/TrekJournalPage";
 import AllJournalsPage from "./pages/AllJournalsPage";
 import EditTrek from "./pages/Treks/EditTrek";
+import AboutUs from "./components/AboutUs";
+
 
 function AppContent() {
   const location = useLocation();
   // Routes where Navbar should not appear
-  const noNavbarRoutes = ['/', '/home', '/login', '/signup'];
+  const noNavbarRoutes = ['/', '/home', '/login', '/signup', '/admindashboard', '/users', '/add', '/edit/:id', '/trek'];
 
   return (
     <>
@@ -60,6 +62,8 @@ function AppContent() {
         {/* Other components */}
         <Route path="/footer" element={<Footer />} />
         <Route path="/layout" element={<Layout />} />
+
+         <Route path="/us" element={<AboutUs />} />
       </Routes>
     </>
   );

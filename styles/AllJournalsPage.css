@@ -11,7 +11,7 @@ html, body, #root {
 .journals-container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 70px); /* full height minus navbar */
+  min-height: calc(100vh); /* full height minus navbar */
   margin-top: 70px; /* height of navbar */
   width: 100%;
   padding: 2rem;
@@ -104,9 +104,20 @@ html, body, #root {
   padding: 1.4rem 1.8rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* push content and buttons apart */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
+  height: 100%; /* make sure cards are equal height */
 }
+
+.journal-card-buttons {
+  margin-top: 1rem; /* some spacing above buttons */
+  display: flex;
+  gap: 1rem; /* space between buttons */
+  justify-content: center; /* center buttons horizontally */
+  align-items: center; /* vertically center if buttons differ in height */
+}
+
 
 .journal-card:hover {
   transform: translateY(-6px);
@@ -346,13 +357,6 @@ html, body, #root {
   }
 }
 
-.journal-card-buttons {
-  margin-top: 0.8rem;
-  display: flex;
-  gap: 0.7rem;
-  justify-content: flex-start;
-}
-
 .journal-card-buttons button {
   padding: 0.3rem 0.8rem;
   font-size: 0.9rem;
@@ -363,6 +367,10 @@ html, body, #root {
   color: #333;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  
+  /* Make buttons equal width */
+  width: 120px;  
+  text-align: center; 
 }
 
 .journal-card-buttons button:hover {

@@ -3,7 +3,7 @@
 .profile-container {
   margin-top: 70px; /* height of navbar */
   width: 100%;
-  min-height: calc(100vh - 40px); /* full height minus navbar */
+  min-height: calc(100vh); /* full height minus navbar */
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
