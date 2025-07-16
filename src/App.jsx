@@ -24,6 +24,7 @@ import Layout from "./layouts/layout";
 import TrekDetailPage from "./pages/TrekDetailPage";
 import TrekJournalPage from "./pages/Journal/TrekJournalPage";
 import AllJournalsPage from "./pages/AllJournalsPage";
+import EditTrek from "./pages/Treks/EditTrek";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
         <Route path="/treks/:trekId" element={<TrekDetailPage />} />
         <Route path="/trek/:trekId/journal" element={<TrekJournalPage />} />
         <Route path="/journals" element={<AllJournalsPage />} />
+        <Route path="/edit/:id" element={<EditTrek />} />
 
 
       </Routes>

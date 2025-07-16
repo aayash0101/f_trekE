@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getTrekById, updateTrek } from '../../api/Trek/trekApi';
+import { getTrek, updateTrek } from '../../api/Trek/trekApi';
 import { useNavigate, useParams } from 'react-router-dom';
+import '../../../styles/EditTrek.css'; // 
 
 export default function EditTrek() {
-  const { id } = useParams(); // get trek id from route
+  const { id } = useParams();
   const navigate = useNavigate();
   const [trek, setTrek] = useState({
     name: '',
@@ -17,7 +18,7 @@ export default function EditTrek() {
   useEffect(() => {
     async function fetchTrek() {
       try {
-        const res = await getTrekById(id);
+        const res = await getTrek(id);
         setTrek(res.data);
         setLoading(false);
       } catch (err) {
@@ -34,7 +35,7 @@ export default function EditTrek() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await updateTrek(id, trek);
-    navigate('/'); // redirect to home or trek list
+    navigate('/trek');
   };
 
   if (loading) return <p>Loading...</p>;
@@ -81,6 +82,7 @@ export default function EditTrek() {
           placeholder="Distance (km)"
         />
         <button type="submit">Update Trek</button>
+        <button type="button" onClick={() => navigate(-1)} className="cancel-button">Cancel</button>
       </form>
     </div>
   );
