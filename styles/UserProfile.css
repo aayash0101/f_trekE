@@ -1,14 +1,15 @@
 /* UserProfile.css */
 
 .profile-container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
+  margin-top: 70px; /* height of navbar */
+  width: 100%;
+  min-height: calc(100vh - 40px); /* full height minus navbar */
+  padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   background: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+  border-radius: 0; /* remove border radius for full width */
+  box-shadow: none; /* remove shadow if you want clean fullscreen */
 }
 
 .profile-title {
@@ -132,7 +133,8 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.07);
-  width: 280px;
+  width: 400px;
+  height: 400px;
   padding: 1rem 1.2rem;
   cursor: pointer;
   display: flex;

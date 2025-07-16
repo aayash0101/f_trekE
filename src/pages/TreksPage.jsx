@@ -59,7 +59,7 @@ export default function TreksPage() {
   return (
     <div className={`treks-page ${darkMode ? 'dark-mode' : ''}`}>
       <header className="treks-header">
-        <h1 className="treks-title">🏔️ Explore Treks</h1>
+        <h1 className="treks-title">-</h1>
         <p className="treks-subtitle">Discover breathtaking adventures curated just for you</p>
         <button
           className="dark-mode-toggle"

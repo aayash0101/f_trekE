@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './index.css'
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import './index.css';
 
-
+// Import Navbar
+import Navbar from './components/Navbar';
 
 // Auth
 import LoginPage from "./pages/LoginPage";
@@ -26,29 +27,48 @@ import TrekJournalPage from "./pages/Journal/TrekJournalPage";
 import AllJournalsPage from "./pages/AllJournalsPage";
 import EditTrek from "./pages/Treks/EditTrek";
 
-const App = () => {
+function AppContent() {
+  const location = useLocation();
+  // Routes where Navbar should not appear
+  const noNavbarRoutes = ['/', '/home', '/login', '/signup'];
+
   return (
-    <Router>
+    <>
+      {!noNavbarRoutes.includes(location.pathname) && <Navbar />}
+
       <Routes>
+        {/* Public & Auth routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/trek" element={<TrekList />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+
+        {/* Trekking related routes */}
+        <Route path="/trek" element={<TrekList />} />
         <Route path="/add" element={<AddTrek />} />
-        <Route path="/admindashboard" element={<AdminDashboard />} />
-        <Route path="/users" element={<UserList />} />
-        <Route path="/trekker" element={<TreksPage />} />
-        <Route path="/profile" element={<UserProfile />} />
-        <Route path="/footer" element={<Footer />} />
-        <Route path="/layout" element={<Layout />} />
+        <Route path="/edit/:id" element={<EditTrek />} />
         <Route path="/treks/:trekId" element={<TrekDetailPage />} />
         <Route path="/trek/:trekId/journal" element={<TrekJournalPage />} />
         <Route path="/journals" element={<AllJournalsPage />} />
-        <Route path="/edit/:id" element={<EditTrek />} />
+        <Route path="/trekker" element={<TreksPage />} />
 
+        {/* User & Admin routes */}
+        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/users" element={<UserList />} />
 
+        {/* Other components */}
+        <Route path="/footer" element={<Footer />} />
+        <Route path="/layout" element={<Layout />} />
       </Routes>
+    </>
+  );
+}
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 };

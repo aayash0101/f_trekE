@@ -9,18 +9,24 @@ html, body, #root {
 }
 
 .journals-container {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  background: #f9fbfc;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
-
-  /* Make container full viewport height and scrollable */
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  min-height: calc(100vh - 70px); /* full height minus navbar */
+  margin-top: 70px; /* height of navbar */
+  width: 100%;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #fafafa;
+  border-radius: 0; /* remove border radius for full width */
+  box-shadow: none; /* remove shadow if you want clean fullscreen */
+}
+
+/* Wrapper for content above pagination */
+.journals-content-wrapper {
+  flex: 1 1 auto;  /* take remaining space */
+  overflow-y: auto; /* scroll if content is too tall */
+  padding-right: 10px; /* optional for scrollbar spacing */
 }
 
 /* Titles and filters */
@@ -182,11 +188,11 @@ html, body, #root {
 
 /* Pagination */
 .pagination {
+  margin-top: auto; /* push pagination to bottom */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 2rem;
 }
 
 .pagination button {
@@ -376,14 +382,3 @@ html, body, #root {
   border-color: #5e1a1a;
   color: white;
 }
-.journals-content-wrapper {
-  flex: 1 1 auto;  /* take remaining space */
-  overflow-y: auto; /* scroll if needed */
-  /* padding/margin as needed */
-}
-
-.pagination {
-  margin-top: auto; /* push pagination to bottom */
-  /* existing pagination styles */
-}
-
