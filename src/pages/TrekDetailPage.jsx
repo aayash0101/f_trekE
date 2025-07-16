@@ -12,6 +12,10 @@ export default function TrekDetailPage() {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Review form state
+  const [reviewText, setReviewText] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
   useEffect(() => {
     const fetchTrek = async () => {
       try {
@@ -46,6 +50,52 @@ export default function TrekDetailPage() {
     }
 
     navigate(`/trek/${trekId}/journal`, { state: { userId } });
+  };
+
+  // Handle review submit
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault();
+
+    const userJSON = localStorage.getItem('user');
+    if (!userJSON) {
+      alert('You must be logged in to submit a review.');
+      return;
+    }
+    const user = JSON.parse(userJSON);
+    const userId = user?.id || user?._id;
+    const username = user?.username || user?.name || 'Anonymous';
+
+    if (!reviewText.trim()) {
+      alert('Please write something before submitting.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/treks/${trekId}/reviews`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId,
+          username,
+          review: reviewText.trim(),
+        }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || 'Failed to submit review');
+      }
+
+      setReviewText('');
+      alert('Review submitted successfully!');
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (error) return <p>Error: {error}</p>;
@@ -113,6 +163,28 @@ export default function TrekDetailPage() {
           </ul>
         </section>
       )}
+
+      {/* Review submission form */}
+      <section className="review-form-section">
+        <h3>Submit a Review</h3>
+        <form onSubmit={handleReviewSubmit} className="review-form">
+          <textarea
+            placeholder="Write your review here..."
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+            rows="4"
+            required
+          />
+          <button type="submit" disabled={submitting}>
+            {submitting ? 'Submitting...' : 'Submit Review'}
+          </button>
+        </form>
+      </section>
+
+      {/* Button to navigate to Reviews page */}
+      <button className="reviews-btn" onClick={() => navigate(`/treks/${trekId}/reviews`)}>
+        View Reviews
+      </button>
     </div>
   );
 }

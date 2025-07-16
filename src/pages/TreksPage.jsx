@@ -116,7 +116,7 @@ export default function TreksPage() {
               <div className="trek-card__meta">
                 <span>⏱️ {trek.duration || 'N/A'} days</span>
                 <span>👥 Max {trek.maxGroupSize || 'N/A'}</span>
-                <span>⭐ {trek.rating || 'N/A'} ({trek.reviews || 0} reviews)</span>
+                <span>⭐ {trek.rating || 'N/A'} ({trek.reviews?.length || 0} reviews)</span>
               </div>
               <Link to={`/treks/${trek._id}`} className="trek-card__view-link">
                 View Details →
@@ -125,6 +125,7 @@ export default function TreksPage() {
           </article>
         ))}
       </section>
+
     </div>
   );
 }
