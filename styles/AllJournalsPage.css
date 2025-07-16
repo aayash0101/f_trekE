@@ -390,3 +390,12 @@ html, body, #root {
   border-color: #5e1a1a;
   color: white;
 }
+.trek-link {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.trek-link:hover {
+  color: #0056b3;
+}

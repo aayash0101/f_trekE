@@ -9,6 +9,7 @@ import {
   removeFavoriteJournal,
 } from '../api/savedAndFavoriteApi'; // your saved/favorite API
 import '../../styles/AllJournalsPage.css';
+import { useNavigate } from 'react-router-dom';  // <-- import useNavigate
 
 const BACKEND_URL = 'http://localhost:5000';
 const ITEMS_PER_PAGE = 6;
@@ -35,6 +36,16 @@ export default function AllJournalsPage() {
   // Get current logged-in user ID from localStorage (adjust if your storage differs)
   const storedUser = localStorage.getItem('user');
   const userId = storedUser ? (JSON.parse(storedUser).id || JSON.parse(storedUser)._id) : null;
+
+  const navigate = useNavigate();  // <-- initialize navigate
+
+  // Navigation function
+  const goToTrekDetail = (trekId) => {
+    if (trekId) {
+      navigate(`/treks/${trekId}`);
+    }
+  };
+
 
   useEffect(() => {
     async function fetchEntries() {
@@ -214,7 +225,23 @@ export default function AllJournalsPage() {
                     {entry.date ? new Date(entry.date).toLocaleDateString() : 'No date'}
                   </span>
                 </div>
-                <div className="journal-trek">Trek: {entry.trekId?.name || 'Unknown'}</div>
+                <div className="journal-trek">
+                  Trek:&nbsp;
+                  {entry.trekId?._id ? (
+                    <span
+                      className="trek-link"
+                      onClick={(e) => {
+                        e.stopPropagation(); // prevent journal modal open
+                        goToTrekDetail(entry.trekId._id);
+                      }}
+                      style={{ color: '#007bff', textDecoration: 'underline', cursor: 'pointer' }}
+                    >
+                      {entry.trekId.name}
+                    </span>
+                  ) : (
+                    'Unknown'
+                  )}
+                </div>
                 <p className="journal-text">
                   {highlightText(entry.text || 'No text provided.', searchQuery)}
                 </p>

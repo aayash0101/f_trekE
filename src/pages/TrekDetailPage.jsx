@@ -10,6 +10,7 @@ export default function TrekDetailPage() {
   const [trek, setTrek] = useState(null);
   const [error, setError] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchTrek = async () => {
@@ -30,7 +31,6 @@ export default function TrekDetailPage() {
     setIsFavorite(!isFavorite);
   };
 
-  // Navigate to journal page with trekId and userId
   const goToJournal = () => {
     const userJSON = localStorage.getItem('user');
     if (!userJSON) {
@@ -38,14 +38,12 @@ export default function TrekDetailPage() {
       return;
     }
     const user = JSON.parse(userJSON);
-    const userId = user?.id || user?._id; // depends on your backend user schema, maybe "_id"
+    const userId = user?.id || user?._id;
 
     if (!userId) {
       alert('User not logged in');
       return;
     }
-
-    // proceed with userId
 
     navigate(`/trek/${trekId}/journal`, { state: { userId } });
   };
@@ -58,11 +56,29 @@ export default function TrekDetailPage() {
       <h1 className="trek-title">{trek.name}</h1>
 
       {trek.imageUrl && (
-        <img
-          src={`${BACKEND_URL}${trek.imageUrl}`}
-          alt={trek.name}
-          className="trek-image"
-        />
+        <>
+          <img
+            src={`${BACKEND_URL}${trek.imageUrl}`}
+            alt={trek.name}
+            className="trek-image"
+            onClick={() => setIsModalOpen(true)}
+          />
+
+          {isModalOpen && (
+            <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+              <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <img
+                  src={`${BACKEND_URL}${trek.imageUrl}`}
+                  alt={trek.name}
+                  className="modal-image"
+                />
+                <button className="close-modal-btn" onClick={() => setIsModalOpen(false)}>
+                  ✕
+                </button>
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       <button
@@ -72,7 +88,6 @@ export default function TrekDetailPage() {
         {isFavorite ? '★ Favorited' : '☆ Add to Favorites'}
       </button>
 
-      {/* New button to go to journal */}
       <button className="journal-btn" onClick={goToJournal}>
         View Trek Journal
       </button>
