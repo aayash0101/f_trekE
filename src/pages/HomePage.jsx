@@ -25,8 +25,8 @@ const HomePage = () => {
               <Link to="/trekker" className="hero-button explore-button">
                 Explore Treks
               </Link>
-              <Link to="/profile" className="hero-button">
-                Profile
+              <Link to="/all-reviews" className="hero-button">
+                Reviews
               </Link>
             </div>
 

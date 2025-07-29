@@ -28,6 +28,7 @@ import AllJournalsPage from "./pages/AllJournalsPage";
 import EditTrek from "./pages/Treks/EditTrek";
 import AboutUs from "./components/AboutUs";
 import TrekReviewsPage from "./pages/TrekReviewsPage";
+import AllReviewsPage from "./pages/AllReviewsPage";
 
 
 function AppContent() {
@@ -55,6 +56,7 @@ function AppContent() {
         <Route path="/journals" element={<AllJournalsPage />} />
         <Route path="/trekker" element={<TreksPage />} />
         <Route path="/treks/:trekId/reviews" element={<TrekReviewsPage/>} />
+        <Route path="/all-reviews" element={<AllReviewsPage />} />
 
 
         {/* User & Admin routes */}

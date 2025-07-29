@@ -1,0 +1,122 @@
+.all-reviews-page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.back-btn {
+  background: #2c7a7b;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #245d5f;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c7a7b;
+}
+
+.trek-review-block {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.trek-review-image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.trek-review-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #2c7a7b;
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.review-item {
+  background: #f5f8fa;
+  padding: 12px 16px;
+  margin: 8px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  max-width: 600px;
+  text-align: left;
+}
+
+.review-item strong {
+  color: #2c7a7b;
+}
+
+.review-item p {
+  margin: 6px 0 4px;
+  font-size: 0.95rem;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
+
+.no-reviews {
+  color: #888;
+  font-style: italic;
+}
+.search-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-filter-container input[type="text"] {
+  flex: 1 1 300px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.search-filter-container input[type="text"]:focus {
+  border-color: #2c7a7b; /* matching your theme color */
+  outline: none;
+  box-shadow: 0 0 5px rgba(44, 122, 123, 0.5);
+}
+
+.search-filter-container select {
+  flex: 0 0 200px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.search-filter-container select:focus {
+  border-color: #2c7a7b;
+  outline: none;
+  box-shadow: 0 0 5px rgba(44, 122, 123, 0.5);
+}
