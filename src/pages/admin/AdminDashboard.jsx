@@ -12,7 +12,7 @@ const AdminDashboard = () => {
           <Link to="/add">Add Trek</Link>
           <Link to="/trek">View Treks</Link>
           <Link to="/users">Manage Users</Link>
-          <Link to="/admin/view-feedback">View Feedback</Link>
+          <Link to="/all-reviews">View Reviews</Link>
         </nav>
       </aside>
 
@@ -39,9 +39,9 @@ const AdminDashboard = () => {
             <Link to="/users" className="card-btn">Go</Link>
           </div>
           <div className="card">
-            <h3>Feedback</h3>
+            <h3>Reviews</h3>
             <p>Check reviews and feedback from trekkers.</p>
-            <Link to="/admin/view-feedback" className="card-btn">Go</Link>
+            <Link to="/all-reviews" className="card-btn">Go</Link>
           </div>
         </div>
       </main>
