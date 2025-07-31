@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addTrek } from '../../api/Trek/trekApi'; // your api call function
-import '../../../styles/AddTrek.css'; 
+import '../../../styles/AddTrek.css';
 
 export default function AddTrek() {
   const navigate = useNavigate();
@@ -125,8 +125,8 @@ export default function AddTrek() {
         />
 
         <div className="image-upload">
-          <label>Upload Trek Image:</label>
-          <input type="file" accept="image/*" onChange={handleImageChange} />
+          <label htmlFor="trekImage">Upload Trek Image:</label>
+          <input id="trekImage" type="file" accept="image/*" onChange={handleImageChange} />
           {imagePreview && (
             <img src={imagePreview} alt="Preview" className="image-preview" />
           )}
