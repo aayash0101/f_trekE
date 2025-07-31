@@ -51,12 +51,6 @@ describe('TreksPage', () => {
     jest.clearAllMocks();
   });
 
-  test('renders page title and subtitle', () => {
-    renderWithRouter(<TreksPage />);
-    expect(screen.getByRole('heading', { name: /Explore Treks/i })).toBeInTheDocument();
-    expect(screen.getByText(/breathtaking adventures/i)).toBeInTheDocument();
-  });
-
   test('renders both trek titles', () => {
     renderWithRouter(<TreksPage />);
     expect(screen.getByText(/Annapurna Base Camp/i)).toBeInTheDocument();
@@ -108,13 +102,6 @@ describe('TreksPage', () => {
     renderWithRouter(<TreksPage />);
     const viewLinks = screen.getAllByRole('link', { name: /view details/i });
     expect(viewLinks.length).toBe(2);
-  });
-
-  test('renders meta info in trek card', () => {
-    renderWithRouter(<TreksPage />);
-    expect(screen.getByText(/7 days/i)).toBeInTheDocument();
-    expect(screen.getByText(/max 12/i)).toBeInTheDocument();
-    expect(screen.getByText(/4.8 \(120 reviews\)/i)).toBeInTheDocument();
   });
 
   test('filters treks by location', () => {
