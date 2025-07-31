@@ -33,6 +33,9 @@ export default function Navbar() {
         <NavLink to="/trekker" className={({ isActive }) => isActive ? 'active' : ''}>
           Treks
         </NavLink>
+        <NavLink to="/all-reviews" className={({ isActive }) => isActive ? 'active' : ''}>
+          Reviews
+        </NavLink>
         <NavLink to="/profile" className={({ isActive }) => isActive ? 'active' : ''}>
           Profile
         </NavLink>
