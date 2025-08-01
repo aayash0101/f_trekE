@@ -27,7 +27,7 @@ describe('HomePage', () => {
   test('renders navigation links with correct text and href', () => {
     const journalsLink = screen.getByRole('link', { name: /Journals/i });
     const exploreLink = screen.getByRole('link', { name: /Explore Treks/i });
-    const profileLink = screen.getByRole('link', { name: /Profile/i });
+    const reviewLink = screen.getByRole('link', { name: /Reviews/i });
 
     expect(journalsLink).toBeInTheDocument();
     expect(journalsLink).toHaveAttribute('href', '/journals');
@@ -35,8 +35,8 @@ describe('HomePage', () => {
     expect(exploreLink).toBeInTheDocument();
     expect(exploreLink).toHaveAttribute('href', '/trekker');
 
-    expect(profileLink).toBeInTheDocument();
-    expect(profileLink).toHaveAttribute('href', '/profile');
+    expect(reviewLink).toBeInTheDocument();
+    expect(reviewLink).toHaveAttribute('href', '/all-reviews');
   });
 
   test('renders feature cards with titles and descriptions', () => {
